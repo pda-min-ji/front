@@ -25,8 +25,8 @@ export default function MMHeader() {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Nav.Link href="#home">로그인</Nav.Link>
-                            <Nav.Link href="#about">회원가입</Nav.Link>
+                            <Nav.Link href="/users/login">로그인</Nav.Link>
+                            <Nav.Link href="/users/signup">회원가입</Nav.Link>
                             <Nav.Link href="#contact">랭킹</Nav.Link>
                         </Nav>
                         {/* <Form className="d-flex">
