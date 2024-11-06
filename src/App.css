@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding:2em;
+	margin-top: calc(var(--header-height) + 30px); /* {{ edit_1 }} - 헤더 높이에 따라 자동 조정 */
+}
+  
+
+
+  .wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+.contentWrapper{
+  	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
