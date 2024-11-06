@@ -1,16 +1,15 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function MMHeader() {
     const expand = 'lg';
 
     return (
-        <Navbar fixed="top" expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar fixed="top" style={{marginBottom:'20px', height: '60px', // 헤더의 높이를 설정
+            '--header-height': '60px' }} expand={expand} className="bg-body-tertiary mb-3">
             <Container fluid>
                 <Navbar.Brand href="#">민문 - 민지의 문제</Navbar.Brand>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

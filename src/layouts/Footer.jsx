@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 export default function MMFooter() {
@@ -6,7 +6,7 @@ export default function MMFooter() {
     <MDBFooter
       bgColor='light'
       className='text-center text-lg-start text-muted'
-      style={{ position: 'fixed', bottom: 0, width: '100%' }}
+      style={{ width: '100%' ,position:'relative'}}
     >
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
@@ -35,7 +35,7 @@ export default function MMFooter() {
         </div>
       </section>
 
-      <section className=''>
+      {/* <section className=''>
         <MDBContainer className='text-center text-md-start mt-5'>
           <MDBRow className='mt-3'>
             <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
@@ -116,7 +116,7 @@ export default function MMFooter() {
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </section>
+      </section> */}
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2021 Copyright:
