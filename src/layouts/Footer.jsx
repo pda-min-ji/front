@@ -6,7 +6,8 @@ export default function MMFooter() {
     <MDBFooter
       bgColor='light'
       className='text-center text-lg-start text-muted'
-      style={{ position: 'fixed', bottom: 0, width: '100%' }}
+      // style={{ position: 'fixed', bottom: 0, width: '100%' }}
+      style={{ bottom: 0, width: '100%' }}
     >
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
