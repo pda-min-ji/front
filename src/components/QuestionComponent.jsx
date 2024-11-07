@@ -1,65 +1,7 @@
-// import { Card, Container, Row, Col, Badge } from "react-bootstrap";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-
-// export default function QuestionComponent() {
-//     const [questions, setQuestions] = useState([]);
-
-//     useEffect(() => {
-//         const getRandomQuestion = async () => {
-//             try {
-//                 const res = await axios.get("/api/questions", {
-//                     headers: {
-//                         'Accept': "application/json"
-//                     }
-//                 });
-//                 setQuestions(res.data.result);
-//             } catch (error) {
-//                 console.error("Error fetching questions:", error);
-//             }
-//         }
-
-//         getRandomQuestion();
-//     }, []);
-
-//     return (
-//         <Container className="py-5" style={{ marginTop: '100px', marginBottom: '20px' }}>
-//             <Row xs={1} md={2} lg={3} className="g-4">
-//                 {questions.map((question, i) => (
-//                     <Col key={i}>
-//                         <Card 
-//                             className="h-100 shadow-sm hover-shadow transition"
-//                             onClick={() => window.open(question.url, '_blank')}
-//                             style={{ cursor: 'pointer' }}
-//                         >
-//                             <Card.Body className="d-flex flex-column">
-//                                 <Card.Title className="mb-3">{question.title}</Card.Title>
-//                                 <Card.Subtitle className="mb-2 text-muted">BOJ - {question.number}번</Card.Subtitle>
-//                                 <Badge bg="primary" className="align-self-start mb-2">{question.level}</Badge>
-//                                 <div className="mt-auto">
-//                                     {question.tags.map((tag, index) => (
-//                                         <Badge 
-//                                             key={index} 
-//                                             bg="secondary" 
-//                                             className="me-1 mb-1"
-//                                         >
-//                                             {tag}
-//                                         </Badge>
-//                                     ))}
-//                                 </div>
-//                             </Card.Body>
-//                         </Card>
-//                     </Col>
-//                 ))}
-//             </Row>
-//         </Container>
-//     );
-// }
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Container, Row, Col, Badge, Button } from "react-bootstrap";
+import { isCorrectAnswer } from "../utils/isCorrectAnswer";
 
 export default function QuestionComponent() {
     const [questions, setQuestions] = useState([]);
