@@ -20,12 +20,12 @@ const LoginComponent = () => {
 
       // 로그인 성공 시
       setLoginCheck(false);
-      const result = response.data;
-      sessionStorage.setItem("token", result.token);
+      const result = response.data; 
+      
       sessionStorage.setItem("name", result.name);
       sessionStorage.setItem("bojId", result.bojId);
-      console.log("로그인 성공, 이름:" + result.name);
-      console.log(result);
+      sessionStorage.setItem("accessToken", result.token);
+      console.log(result.token, result.name, result.bojId, result);
       navigate("/");
     } catch (error) {
       // 로그인 실패 시
@@ -57,7 +57,7 @@ const LoginComponent = () => {
           
           {loginCheck && (
             <p style={{ color: "red", textAlign: "left" }}>
-              이메일 혹은 비밀번호가 틀렸습니다.
+              이름 혹은 비밀번호가 틀렸습니다.
             </p>
           )}
 
