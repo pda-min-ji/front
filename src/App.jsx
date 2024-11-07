@@ -1,6 +1,6 @@
-// import './App.css'
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button} from 'react-bootstrap';
+
 import MMHeader from './layouts/Header';
 import ProblemComponent from './components/QuestionComponent';
 import MMFooter from './layouts/Footer';
@@ -11,9 +11,18 @@ function App() {
 
   return (
     <>
-      <MMHeader/>
-      <QuestionComponent/>
-      <MMFooter/>
+    <div className='wrapper'>
+      <div className='contentWrapper' style={{marginBottom:"20px"}}>
+          <MMHeader/>
+      </div>
+      {/* <div className='contentWrapper'> */}
+      <div className="container">
+        <QuestionComponent />
+      </div>
+      <div className='contentWrapper'>
+        <MMFooter/>
+      </div>
+    </div>
     </>
   )
 }

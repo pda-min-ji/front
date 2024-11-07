@@ -1,0 +1,12 @@
+module.exports = {
+    singleQuote: true,
+    semi: true,
+    useTabs: false,
+    tabWidth: 2,
+    printWidth: 80,
+    endOfLine: 'auto',    
+    rules:{
+    'react/no-unescaped-entities': 'off', 
+    },
+};
+  

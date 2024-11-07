@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding:2em;
+	margin-top: calc(var(--header-height) + 30px); /* {{ edit_1 }} - 헤더 높이에 따라 자동 조정 */
+}
+  
+
+
+  .wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+.contentWrapper{
+  	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.footer-text {
+    font-size: 0.8rem; /* 원하는 크기로 조정 */
+	color:#212529BF;
+	margin: 0 !important; /* 모든 여백 제거 */
+    padding: 0 !important; 
+}
+
+.no-underline {
+    text-decoration: none; /* 밑줄 제거 */
+}
