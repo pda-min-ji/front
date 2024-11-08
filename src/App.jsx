@@ -2,10 +2,10 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MMHeader from './layouts/Header';
-import ProblemComponent from './components/QuestionComponent';
+
 import MMFooter from './layouts/Footer';
-import { BrowserRouter } from 'react-router-dom';
-import QuestionComponent from './components/QuestionComponent';
+import MainRouters from './routers/mainRouter';
+
 
 function App() {
 
@@ -15,14 +15,13 @@ function App() {
       <div className='contentWrapper' style={{marginBottom:"20px"}}>
           <MMHeader/>
       </div>
-      {/* <div className='contentWrapper'> */}
-      <div className="container">
-        <QuestionComponent />
+      <div className="container contentWrapper">
+        <MainRouters/>
       </div>
+    </div>
       <div className='contentWrapper'>
         <MMFooter/>
       </div>
-    </div>
     </>
   )
 }
