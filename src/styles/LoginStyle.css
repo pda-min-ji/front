@@ -1,0 +1,142 @@
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  overflow: hidden;
+}
+
+.falling-circles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffb6c1;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) scale(1.1);
+  }
+  100% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+.form-container {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.side-info {
+  width: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.side-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.side-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 80%;
+}
+
+.form-box {
+  width: 50%;
+  max-width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-box h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-box label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-box button:hover {
+  background: linear-gradient(90deg, #556cd6, #6a3ea1);
+}
+
+.form-box .link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-box .link a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.form-box .link a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
