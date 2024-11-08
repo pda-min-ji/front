@@ -49,6 +49,7 @@ export default function Component() {
       "bojId": sessionStorage.getItem("bojId"),
       "questionNumber": number
     }
+
     // 로딩 상태 시작
     setLoading((prev) => ({ ...prev, [index]: true }));
     setResult((prev) => ({ ...prev, [index]: null }));

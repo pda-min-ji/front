@@ -11,8 +11,8 @@ const MainRouters = () => {
             <Routes>
                 <Route path="users/login" element={<LoginComponent />} />
                 <Route path="users/signup" element={<SignupComponent />} /> {/* Signup 라우트 추가 */}
-                <Route path="/" element={<QuestionComponent/>}/>
                 <Route path='/users/test' element={<TestComponent/>}/> {/* API request Test*/}
+                <Route path="/" element={<QuestionComponent/>}/>
             </Routes>
         </Router>
     );
