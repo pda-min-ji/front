@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; // axios 임포트
 import '../styles/LoginStyle.css';
+import { useUser } from "../contexts/userContext";
 
 const LoginComponent = () => {
   const [name, setname] = useState("");
   const [password, setpassword] = useState("");
   const [loginCheck, setLoginCheck] = useState(false);
   const navigate = useNavigate();
-
+  const {Login} =useUser();
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -20,12 +21,13 @@ const LoginComponent = () => {
       // 로그인 성공 시
       const result = response.data;
       
-      sessionStorage.setItem("name", result.name);
-      sessionStorage.setItem("bojId", result.bojId);
-      sessionStorage.setItem("accessToken", result.token);
-      console.log(result.token, result.name, result.bojId, result);
-      sessionStorage.setItem("loginStatus", "loggedIn");
-      sessionStorage.removeItem("loginStatus");
+      Login(result);
+      // sessionStorage.setItem("name", result.name);
+      // sessionStorage.setItem("bojId", result.bojId);
+      // sessionStorage.setItem("accessToken", result.token);
+      // console.log(result.token, result.name, result.bojId, result);
+      // sessionStorage.setItem("loginStatus", "loggedIn");
+      // sessionStorage.removeItem("loginStatus");
       navigate("/");
     } catch (error) {
       setLoginCheck(true);
