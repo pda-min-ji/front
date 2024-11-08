@@ -40,6 +40,7 @@ const SignUpComponent = () => {
   return (
     <div className="signup-page">
       <form className="signup-form" onSubmit={handleSignup}>
+        <h1>회원가입</h1>
         <label htmlFor="bojId">백준계정</label>
         <input
           type="text"

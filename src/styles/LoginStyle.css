@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  margin: 0;
+  margin-top: 50px;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #e0eafc, #cfdef3);
   overflow: hidden;
