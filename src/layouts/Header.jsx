@@ -4,10 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
+import { useUser } from '../contexts/userContext';
 export default function MMHeader() {
     const expand = 'lg';
     const [isLogOn, setIsLogOn] = useState();
+    const {name,onLogin} = useUser();
     
     //바보같은 방법
     useEffect(()=>{
@@ -38,11 +39,12 @@ export default function MMHeader() {
         window.location.href = "/";
     }
 
+
     return (
         <Navbar fixed="top" style={{marginBottom:'20px', height: '60px', // 헤더의 높이를 설정
             '--header-height': '60px' }} expand={expand} className="bg-body-tertiary mb-3">
             <Container fluid>
-                <Navbar.Brand href="#">민문 - 민지의 문제</Navbar.Brand>
+                <Navbar.Brand href="#">민문 - {name}의 문제</Navbar.Brand>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-${expand}`}
