@@ -9,6 +9,7 @@ export default function MMHeader() {
     const expand = 'lg';
     const [isLogOn, setIsLogOn] = useState();
     
+    //바보같은 방법
     useEffect(()=>{
         const intervalId = setInterval(()=>{
             const token = sessionStorage.getItem('accessToken');
@@ -23,12 +24,14 @@ export default function MMHeader() {
         }
     }, [isLogOn])
     
+
     // useEffect(()=>{
     //     const token = sessionStorage.getItem('accessToken');
     //     if(token){
     //         setIsLogOn(true);
     //     }
     // }, []);
+
     function Logout(){
         sessionStorage.clear();
         setIsLogOn(false);
