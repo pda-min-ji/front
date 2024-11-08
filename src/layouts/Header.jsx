@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 // import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -6,6 +7,18 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function MMHeader() {
     const expand = 'lg';
+    const [isLogOn, setIsLogOn] = useState();
+    useEffect(()=>{
+        const token = sessionStorage.getItem('accessToken');
+        if(token){
+            setIsLogOn(true);
+        }
+    }, []);
+    function Logout(){
+        sessionStorage.clear();
+        setIsLogOn(false);
+        window.location.href = "/";
+    }
 
     return (
         <Navbar fixed="top" style={{marginBottom:'20px', height: '60px', // 헤더의 높이를 설정
@@ -24,11 +37,21 @@ export default function MMHeader() {
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Nav.Link href="/users/login">로그인</Nav.Link>
-                            <Nav.Link href="/users/signup">회원가입</Nav.Link>
-                            <Nav.Link href="#contact">랭킹</Nav.Link>
-                        </Nav>
+                            {!isLogOn ? 
+                            (
+                                <Nav className="justify-content-end flex-grow-1 pe-3">
+                                    <Nav.Link href="/users/login">로그인</Nav.Link>
+                                    <Nav.Link href="/users/signup">회원가입</Nav.Link>
+                                    <Nav.Link href="#contact" >랭킹</Nav.Link>
+                                </Nav>
+                            ) : (
+                                <Nav className="justify-content-end flex-grow-1 pe-3">
+                                    <Nav.Link onClick={Logout}>로그아웃</Nav.Link>
+                                    <Nav.Link href="#contact" >랭킹</Nav.Link>
+                                </Nav>
+                            )
+
+                            }
                         {/* <Form className="d-flex">
                             <Form.Control
                                 type="search"

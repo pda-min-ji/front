@@ -7,7 +7,6 @@ const LoginComponent = () => {
   const [name, setname] = useState("");
   const [password, setpassword] = useState("");
   const [loginCheck, setLoginCheck] = useState(false);
-
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -19,16 +18,17 @@ const LoginComponent = () => {
       });
 
       // 로그인 성공 시
-      setLoginCheck(false);
+  
       const result = response.data; 
       
       sessionStorage.setItem("name", result.name);
       sessionStorage.setItem("bojId", result.bojId);
       sessionStorage.setItem("accessToken", result.token);
       console.log(result.token, result.name, result.bojId, result);
+      sessionStorage.setItem("loginStatus", "loggedIn");
+      sessionStorage.removeItem("loginStatus");
       navigate("/");
     } catch (error) {
-      // 로그인 실패 시
       setLoginCheck(true);
       console.error("Login Error:", error.response?.data || error.message);
     }
