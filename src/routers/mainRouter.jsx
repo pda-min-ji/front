@@ -2,8 +2,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginComponent from '../components/LoginComponent';
 import SignupComponent from '../components/SignUpComponent';
-import ProblemComponent from '../components/ProblemComponent';
+// import ProblemComponent from '../components/ProblemComponent';
 import TestComponent from '../components/TestComponent';
+import QuestionComponent from '../components/QuestionComponent';
 
 const MainRouters = () => {
     return (
@@ -11,7 +12,7 @@ const MainRouters = () => {
             <Routes>
                 <Route path="users/login" element={<LoginComponent />} />
                 <Route path="users/signup" element={<SignupComponent />} /> {/* Signup 라우트 추가 */}
-                <Route path="/" element={<ProblemComponent/>}/>
+                <Route path="/" element={<QuestionComponent/>}/>
                 <Route path='/users/test' element={<TestComponent/>}/> {/* API request Test*/}
             </Routes>
         </Router>

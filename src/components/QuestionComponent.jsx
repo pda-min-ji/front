@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Container, Row, Col, Badge, Button } from "react-bootstrap";
-import { isCorrectAnswer } from "../utils/isCorrectAnswer";
+// import { isCorrectAnswer } from "../utils/isCorrectAnswer";
 
 export default function QuestionComponent() {
     const [questions, setQuestions] = useState([]);
