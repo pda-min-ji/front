@@ -1,4 +1,3 @@
-// import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 export default function MMFooter() {
@@ -6,124 +5,98 @@ export default function MMFooter() {
     <MDBFooter
       bgColor='light'
       className='text-center text-lg-start text-muted'
-      style={{ width: '100%' ,position:'relative'}}
+      style={{ width: '100%', position: 'relative', padding: '10px 0', margin: '0' }} // 패딩과 마진 조정
     >
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
-        </div>
-
-        <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='facebook-f' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='twitter' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='google' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='instagram' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='linkedin' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='github' />
-          </a>
-        </div>
-      </section>
-
-      {/* <section className=''>
-        <MDBContainer className='text-center text-md-start mt-5'>
+      <section className=''>
+        <MDBContainer className='text-center text-md-start' style={{ padding: '0' }}> {/* 내부 패딩 제거 */}
           <MDBRow className='mt-3'>
-            <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>
+            <MDBCol md='6' lg='6' xl='6' className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-1' style={{fontSize:'0.9rem'}}> {/* 여백 줄이기 */}
                 <MDBIcon color='secondary' icon='gem' className='me-3' />
                 Company name
               </h6>
-              <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit.
+              <p className='footer-text mb-1'> {/* 여백 줄이기 */}
+                민지와 아이들 ^.^
               </p>
             </MDBCol>
 
-            <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Angular
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  React
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
-                </a>
-              </p>
-            </MDBCol>
+          <MDBCol md='3' lg='3' xl='3' className='mx-auto mb-4'>
+            <h6 className='text-uppercase fw-bold mb-1' style={{ fontSize: '0.9rem' }}>
+              Useful
+            </h6>
+            
+            <MDBRow>
+              <MDBCol>
+                <p className='footer-text mb-1'>
+                  <a href='https://www.acmicpc.net/' className='text-reset no-underline' target="_blank" rel="noopener noreferrer">
+                    백준
+                  </a>
+                </p>
+                <p className='footer-text mb-1'>
+                  <a href='https://programmers.co.kr/' className='text-reset no-underline' target="_blank" rel="noopener noreferrer">
+                    프로그래머스
+                  </a>
+                </p>
+              </MDBCol>
+              
+              <MDBCol>
+                <p className='footer-text mb-1'>
+                  <a href='https://level.goorm.io/?_gl=1*c8bl64*_gcl_au*MTIxMDM1MDQxOC4xNzMwODczOTk3' className='text-reset no-underline' target="_blank" rel="noopener noreferrer">
+                    구름
+                  </a>
+                </p>
+                <p className='footer-text mb-1'>
+                  <a href='https://www.codetree.ai/' className='text-reset no-underline' target="_blank" rel="noopener noreferrer">
+                    코드트리
+                  </a>
+                </p>
+              </MDBCol>
+            </MDBRow>
+          </MDBCol>
 
-            <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Pricing
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Settings
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Orders
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Help
-                </a>
-              </p>
-            </MDBCol>
-
-            <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-              <p>
-                <MDBIcon color='secondary' icon='home' className='me-2' />
-                New York, NY 10012, US
-              </p>
-              <p>
-                <MDBIcon color='secondary' icon='envelope' className='me-3' />
-                info@example.com
-              </p>
-              <p>
-                <MDBIcon color='secondary' icon='phone' className='me-3' /> + 01 234 567 88
-              </p>
-              <p>
-                <MDBIcon color='secondary' icon='print' className='me-3' /> + 01 234 567 89
-              </p>
+            <MDBCol md='3' lg='3' xl='3' className='mx-auto mb-4' >
+              <h6 className='text-uppercase fw-bold mb-1' style={{fontSize:'0.9rem'}}> {/* 여백 줄이기 */}
+                Contact
+              </h6>
+              <MDBRow className='g-0 p-0'>
+                <MDBCol className='g-0 p-0'>
+                  <p className='footer-text mb-0'>
+                    <a href ='https://github.com/MinYeong-mkk'className='text-reset no-underline' target="_blank" >
+                    민영언니
+                    </a>
+                  </p>
+                </MDBCol>
+                <MDBCol className='g-0 p-0'>
+                  <p className='footer-text mb-0'>
+                    <a href ='https://github.com/Chaean00'className='text-reset no-underline' target="_blank" >
+                    택이님
+                    </a>
+                  </p>
+                </MDBCol>
+              </MDBRow>
+              
+              <MDBRow className='g-0 p-0'>
+                <MDBCol className='g-0 p-0'>
+                  <p className='footer-text mb-0'>
+                    <a href = 'https://github.com/0321minji' className='text-reset no-underline' target="_blank" >
+                    {/* <MDBIcon color='secondary' icon='phone' className='me-3' /> + 01 234 567 88 */}
+                    민지
+                    </a>
+                  </p>
+                </MDBCol>
+                <MDBCol className='g-0 p-0'>
+                  <p className='footer-text mb-0 p-0'>
+                    <a href='https://github.com/jjjuhoon' className='text-reset no-underline' target="_blank" rel="noopener noreferrer">
+                    {/* <MDBIcon color='secondary' icon='print' className='me-3' /> + 01 234 567 89 */}
+                    주훈짱^_^
+                    </a>
+                  </p>
+                </MDBCol>
+              </MDBRow>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </section> */}
-
-      <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        © 2021 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
-      </div>
+      </section>
     </MDBFooter>
   );
 }

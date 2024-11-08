@@ -23,3 +23,14 @@ body {
 	align-items: center;
 	flex-direction: column;
 }
+
+.footer-text {
+    font-size: 0.8rem; /* 원하는 크기로 조정 */
+	color:#212529BF;
+	margin: 0 !important; /* 모든 여백 제거 */
+    padding: 0 !important; 
+}
+
+.no-underline {
+    text-decoration: none; /* 밑줄 제거 */
+}
