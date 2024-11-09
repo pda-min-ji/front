@@ -37,7 +37,7 @@ export default function MMHeader() {
         <Navbar fixed="top" style={{marginBottom:'20px', height: '60px', // 헤더의 높이를 설정
             '--header-height': '60px' }} expand={expand} className="bg-body-tertiary mb-3">
             <Container fluid>
-                <Navbar.Brand href="#">{first}문 - {name}의 문제</Navbar.Brand>
+                <Navbar.Brand href="/">{first}문 - {name}의 문제</Navbar.Brand>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-${expand}`}
