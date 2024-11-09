@@ -56,12 +56,12 @@ export default function MMHeader() {
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
                                     <Nav.Link href="/users/login">로그인</Nav.Link>
                                     <Nav.Link href="/users/signup">회원가입</Nav.Link>
-                                    <Nav.Link href="#contact" >랭킹</Nav.Link>
+                                    <Nav.Link href="/ranking" >랭킹</Nav.Link>
                                 </Nav>
                             ) : (
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
                                     <Nav.Link onClick={Logout}>로그아웃</Nav.Link>
-                                    <Nav.Link href="#contact" >랭킹</Nav.Link>
+                                    <Nav.Link href="/ranking" >랭킹</Nav.Link>
                                 </Nav>
                             )
 
