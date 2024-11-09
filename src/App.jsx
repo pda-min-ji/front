@@ -8,27 +8,24 @@ import { UserProvider } from './contexts/userContext';
 import QuestionComponent from './components/QuestionComponent';
 
 function App() {
-
   return (
     <>
-    <UserProvider>
-    <div className='wrapper'>
-      <div className='contentWrapper' style={{marginBottom:"20px"}}>
-          <MMHeader/>
-      </div>
-      {/* <div className='contentWrapper'> */}
-      <div className="container">
-        <MainRouters></MainRouters>
-
-        <QuestionComponent />
-
-      </div>
-      <div className='contentWrapper'>
-        <MMFooter/>
-      </div>
+      <UserProvider>
+        <div className='wrapper'>
+          <div className='contentWrapper' style={{ marginBottom: "20px" }}>
+            <MMHeader />
+          </div>
+          <div className="container">
+            <MainRouters />
+            <QuestionComponent />
+          </div>
+          <div className='contentWrapper'>
+            <MMFooter />
+          </div>
+        </div>
       </UserProvider>
     </>
-  )
+  );
 }
 
 export default App
