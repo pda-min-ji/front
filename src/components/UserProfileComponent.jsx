@@ -83,8 +83,8 @@ export default function UserProfile() {
               <thead>
                 <tr style={{ backgroundColor: '#f2f2f2' }}>
                   
-                  <th style={{ padding: '10px', textAlign: 'center', fontWeight: 'bold' }}>ID</th>
-                  <th style={{ padding: '10px', textAlign: 'center', fontWeight: 'bold' }}>Level</th>
+                  <th style={{ padding: '10px', textAlign: 'center', fontWeight: 'bold',width: '10%'  }}>ID</th>
+                  <th style={{ padding: '10px', textAlign: 'center', fontWeight: 'bold',width: '15%'  }}>Level</th>
                   <th style={{ padding: '10px', textAlign: 'center', fontWeight: 'bold' }}>Title</th>
                 </tr>
               </thead>
