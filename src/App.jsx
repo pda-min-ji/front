@@ -11,16 +11,12 @@ function App() {
   return (
     <>
     <UserProvider>
-    <div className='wrapper'>
-      <div className='contentWrapper' style={{marginBottom:"20px"}}>
-          <MMHeader/>
-      </div>
-      <div className="container contentWrapper">
-        <MainRouters/>
-      </div>
-    </div>
-      <div className='contentWrapper'>
-        <MMFooter/>
+      <div className='root'>
+        <MMHeader />
+        <div id='container'>
+          <MainRouters />
+        </div>
+        <MMFooter />
       </div>
       </UserProvider>
     </>

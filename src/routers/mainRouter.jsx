@@ -5,6 +5,7 @@ import SignupComponent from '../components/SignUpComponent';
 import QuestionComponent from '../components/QuestionComponent'
 import TestComponent from '../components/TestComponent';
 import RankingComponent from '../components/RankingComponent';
+import UserProfile from '../components/UserProfileComponent';
 
 const MainRouters = () => {
     return (
@@ -15,6 +16,8 @@ const MainRouters = () => {
                 <Route path='/users/test' element={<TestComponent/>}/> {/* API request Test*/}
                 <Route path="/" element={<QuestionComponent/>}/>
                 <Route path="/ranking" element={<RankingComponent />} />
+                <Route path="/profile/:userId" element={<UserProfile />}/>
+                <Route path='/profile' element={<UserProfile />} />
             </Routes>
         </Router>
     );
