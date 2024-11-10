@@ -45,10 +45,6 @@ export default function UserProfile() {
     return `/images/${encodedImage}`;
   };
 
-  // const caculatePoint = (questions)=>{
-  //   return questions.reduce((sum,question)=>sum+question.level,)
-  // }
-
   return (
     <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh', paddingTop: '80px' }}>
     <div style={{ maxWidth: "800px", width: '100%' }}>
@@ -90,7 +86,7 @@ export default function UserProfile() {
               </thead>
               <tbody>
                 {profileData.solvedQ.map((q, index) => (
-                  <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+                  <tr key={index} style={{ borderBottom: '1px solid #ddd' }} onClick={() => window.open(q.url,'_blank')}>
                     <td style={{ padding: '10px', textAlign: 'center' }}>{q.id || 'Unknown ID'}</td>
                     <td style={{ padding: '10px', textAlign: 'center' }}>{q.level || 'Unknown Level'}</td>
                     <td style={{ padding: '10px' }}>{q.title || 'Unknown Title'}</td>
