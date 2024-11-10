@@ -48,13 +48,13 @@ export function UserProvider({children}){
     };
 
     return (
-        <UserContext.Provider value = {{name,setName,onLogin,setOnLogin,Logout,first,Login,id,goToProfile}}>
+        <UserContext.Provider value = {{name,setName,onLogin,setOnLogin,Logout,first,Login,id,goToProfile,setId}}>
             {children}
         </UserContext.Provider>
     )
 }
 
 export function useUser(){
-    const {name,setName,onLogin,setOnLogin,Logout,first,Login,id,goToProfile}=useContext(UserContext);
-    return {name,setName,onLogin,setOnLogin,Logout,first,Login,id,goToProfile};
+    const {name,setName,onLogin,setOnLogin,Logout,first,Login,id,goToProfile,setId}=useContext(UserContext);
+    return {name,setName,onLogin,setOnLogin,Logout,first,Login,id,goToProfile,setId};
 }
