@@ -7,37 +7,15 @@ import { useUser } from '../contexts/userContext';
 export default function MMHeader() {
     const expand = 'lg';
     // const [isLogOn, setIsLogOn] = useState();
-    const {name,onLogin,Logout,first} = useUser();
-    
-    // //바보같은 방법
-    // useEffect(()=>{
-    //     const intervalId = setInterval(()=>{
-    //         const token = sessionStorage.getItem('accessToken');
-    //         if(token && !isLogOn){
-    //             setIsLogOn(true);
-    //         } else if (!token) {
-    //             setIsLogOn(false)
-    //         }
-    //     }, 10)
-    //     return ()=>{
-    //         clearInterval(intervalId)
-    //     }
-    // }, [isLogOn])
-    
-
-    // function Logout(){
-    //     sessionStorage.clear();
-    //     // setIsLogOn(false);
-    //     setOnLogin(false);
-    //     window.location.href = "/";
-    // }
-
+    const {name,onLogin,Logout,first,id,goToProfile} = useUser();
+    console.log(id);
+    // const profileUrl = `/profile/${id}`;
 
     return (
         <Navbar fixed="top" style={{marginBottom:'20px', height: '60px', // 헤더의 높이를 설정
             '--header-height': '60px' }} expand={expand} className="bg-body-tertiary mb-3">
             <Container fluid>
-                <Navbar.Brand href="#">{first}문 - {name}의 문제</Navbar.Brand>
+                <Navbar.Brand href="/">{first}문 - {name}의 문제</Navbar.Brand>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-${expand}`}
@@ -60,21 +38,18 @@ export default function MMHeader() {
                                 </Nav>
                             ) : (
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
+                                    <Nav.Link 
+                                    onClick={()=>goToProfile(id)}
+                                    // href={profileUrl}
+                                    
+                                    >마이페이지</Nav.Link>
                                     <Nav.Link onClick={Logout}>로그아웃</Nav.Link>
                                     <Nav.Link href="/ranking" >랭킹</Nav.Link>
                                 </Nav>
                             )
 
                             }
-                        {/* <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form> */}
+
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
             </Container>

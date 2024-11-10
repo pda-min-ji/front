@@ -6,16 +6,6 @@ body {
   overflow: hidden;
 }
 
-
-@keyframes blink {
-  from {
-    border-color: transparent;
-  }
-  to {
-    border-color: black;
-  }
-}
-
 .falling-circles-container {
   position: absolute;
   top: 0;
@@ -24,19 +14,19 @@ body {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  z-index: -1;
 }
 
-.circle {
+/* 새로 추가한 이미지 애니메이션 */
+.falling-image {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #ffb6c1;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: fall 5s linear infinite;
+  width: 30px; /* 이미지 크기 조절 */
+  height: auto;
+  animation: fall-image linear infinite;
+  opacity: 0.9;
 }
 
-@keyframes fall {
+@keyframes fall-image {
   0% {
     transform: translateY(-100px) scale(1);
     opacity: 1;
@@ -50,16 +40,28 @@ body {
   }
 }
 
+.frame-container{
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center;
+  height: calc(100vh - 190px);
+}
+
+.page-container{
+  width: 80%;
+}
+
 .form-container {
   display: flex;
-  max-width: 800px;
-  width: 100%;
+  
+  width: 80%;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   justify-content: flex-end;
   position: relative;
+  max-width: 1000px;
 }
 
 .side-info {
@@ -87,7 +89,6 @@ body {
 
 .form-box {
   width: 50%;
-  max-width: 400px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -114,6 +115,10 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+}
+
+.form-box-inside{
+  width: 90%;
 }
 
 .form-box button {

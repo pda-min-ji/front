@@ -3,17 +3,26 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../styles/LoginStyle.css';
 import { useUser } from "../contexts/userContext";
-import { Typed } from "react-typed";
+import { Typewriter } from "react-simple-typewriter";
 
 const LoginComponent = () => {
   const [name, setname] = useState("");
   const [password, setpassword] = useState("");
   const [loginCheck, setLoginCheck] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(""); // 에러 메시지 상태 추가
   const navigate = useNavigate();
-  const {Login} =useUser();
+  const { Login } = useUser();
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    
+    // 빈 값 유효성 검사 추가
+    if (!name.trim() || !password.trim()) {
+      setLoginCheck(true);
+      setErrorMessage("이름과 비밀번호를 모두 입력해 주세요."); // 빈 값일 때 에러 메시지 설정
+      return;
+    }
+
     try {
       const response = await axios.post("http://localhost:8080/users/login", {
         name: name,
@@ -22,61 +31,68 @@ const LoginComponent = () => {
 
       // 로그인 성공 시
       const result = response.data;
-      
       Login(result);
-      // sessionStorage.setItem("name", result.name);
-      // sessionStorage.setItem("bojId", result.bojId);
-      // sessionStorage.setItem("accessToken", result.token);
-      // console.log(result.token, result.name, result.bojId, result);
-      // sessionStorage.setItem("loginStatus", "loggedIn");
-      // sessionStorage.removeItem("loginStatus");
       navigate("/");
     } catch (error) {
       setLoginCheck(true);
+      setErrorMessage("이름 혹은 비밀번호가 틀렸습니다."); // 로그인 실패 시 에러 메시지 설정
       console.error("Login Error:", error.response?.data || error.message);
     }
   };
 
   useEffect(() => {
     const container = document.querySelector('.falling-circles-container');
+    const images = [
+      "/images/circle.png",
+      "/images/triangle.png",
+      "/images/rectangle.png"
+    ];
 
-    const createCircle = () => {
-      const circle = document.createElement('div');
-      circle.classList.add('circle');
-      circle.style.left = `${Math.random() * 100}%`; // 랜덤 수평 위치
-      circle.style.animationDuration = `${3 + Math.random() * 2}s`; // 랜덤 애니메이션 속도
-      container.appendChild(circle);
-
-      // 애니메이션이 끝나면 원소 삭제
-      circle.addEventListener('animationend', () => {
-        circle.remove();
+    const createFallingImage = () => {
+      const img = document.createElement('img');
+      img.classList.add('falling-image');
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.style.left = `${Math.random() * 100}%`;
+      img.style.animationDuration = `${5 + Math.random() * 3}s`;
+  
+      img.onload = () => {
+        container.appendChild(img);
+      };
+  
+      img.onerror = () => {
+        console.error("Failed to load image:", img.src);
+      };
+  
+      img.addEventListener('animationend', () => {
+        img.remove();
       });
     };
 
-    // 일정 간격으로 동그라미 생성
-    const interval = setInterval(createCircle, 800);
-
-    // 컴포넌트가 언마운트되면 애니메이션 중지
+    const interval = setInterval(createFallingImage, 1500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="form-container">
-      <div className="falling-circles-container"></div> {/* Falling circles 컨테이너 추가 */}
-      <div className="side-info">
-        <Typed
-            strings={[
-              "printf('Hello?')",
-              "printf('Welcome Minji's Question')"
-            ]}
-            typeSpeed={40}
-            backSpeed={50}
-            loop
-          />
-      </div>
+    <div className="page-container">
+      <div className="falling-circles-container"></div>
+      <div className="frame-container">
+      <div className="form-container">
+        <div className="side-info">
+        <Typewriter
+          words={[
+            "printf('Welcome Minji's Question')"
+          ]}
+          loop={true}
+          cursor
+          cursorStyle="_"
+          typeSpeed={100}
+          deleteSpeed={70}
+          delaySpeed={1000}
+        />
+        </div>
       <div className="form-box">
         <h1>로그인</h1>
-        <form onSubmit={handleLogin}>
+        <form className="form-box-inside" onSubmit={handleLogin}>
           <label htmlFor="username">이름</label>
           <input
             type="text"
@@ -92,9 +108,9 @@ const LoginComponent = () => {
             value={password}
             onChange={(e) => setpassword(e.target.value)}
           />
-          
+
           {loginCheck && (
-            <p className="error-message">이름 혹은 비밀번호가 틀렸습니다.</p>
+            <p className="error-message">{errorMessage}</p> // 에러 메시지 화면에 표시
           )}
 
           <button type="submit">로그인</button>
@@ -105,7 +121,9 @@ const LoginComponent = () => {
         </p>
       </div>
     </div>
-  );
+    </div>
+  </div>
+);
 };
 
 export default LoginComponent;
