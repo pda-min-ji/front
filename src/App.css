@@ -1,33 +1,31 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
-   height: 100%;
-  }
-.root {
-   margin: 0;
-   padding:0;
-}
-#container {
-   padding:2em;
-   /* height: calc(var(--vh, 1vh) * 100); */
-   margin-top: calc(var(--header-height) + 30px); /* {{ edit_1 }} - 헤더 높이에 따라 자동 조정 */
-}
-.wrapper{
-   flex-direction: column;    
-   height: 85vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto !important; /
+
 }
 
-.contentWrapper{
-     display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+.root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+#container {
+    flex: 1;
+    padding: 2em;
+    overflow-y: auto; /* Enable scrolling */
+}
+
 .footer {
-    width: 100%; /* 화면 너비에 맞춤 */
-    background-color: #f8f9fa; /* 배경색 설정 */
-     /* 상하 패딩 추가 */
-    position: relative; /* 위치 설정 */
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
 }
 .footer-text {
     font-size: 0.8rem !important;  /* 원하는 크기로 조정 */
@@ -35,7 +33,6 @@ body {
    margin: 0 !important; /* 모든 여백 제거 */
     padding: 0 !important; 
 }
-
 .no-underline {
     text-decoration: none; /* 밑줄 제거 */
 }

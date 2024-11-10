@@ -22,12 +22,7 @@ const LoginComponent = () => {
       const result = response.data;
       
       Login(result);
-      // sessionStorage.setItem("name", result.name);
-      // sessionStorage.setItem("bojId", result.bojId);
-      // sessionStorage.setItem("accessToken", result.token);
-      // console.log(result.token, result.name, result.bojId, result);
-      // sessionStorage.setItem("loginStatus", "loggedIn");
-      // sessionStorage.removeItem("loginStatus");
+
       navigate("/");
     } catch (error) {
       setLoginCheck(true);
