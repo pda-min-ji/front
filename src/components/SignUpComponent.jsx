@@ -20,7 +20,7 @@ const SignUpComponent = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/users/signUp", payload, {
+      const response = await axios.post("/api/users/signUp", payload, {
         headers: {
           "Content-Type": "application/json",
         },

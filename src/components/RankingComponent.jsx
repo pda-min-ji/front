@@ -13,14 +13,14 @@ const RankingComponent = () => {
   useEffect(() => {
     const fetchRanks = async () => {
       try {
-        const weeklyResponse = await axios.get("http://localhost:8080/rank/week");
+        const weeklyResponse = await axios.get("/api/rank/week");
         if (weeklyResponse.data.isSuccess) {
           setWeeklyRanks(weeklyResponse.data.result);
         } else {
           throw new Error('주간 랭킹 데이터를 불러오는 데 실패했습니다.');
         }
   
-        const totalResponse = await axios.get("http://localhost:8080/rank/total");
+        const totalResponse = await axios.get("/api/rank/total");
         if (totalResponse.data.isSuccess) {
           setTotalRanks(totalResponse.data.result);
         } else {

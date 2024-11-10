@@ -13,7 +13,7 @@ const LoginComponent = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/users/login", {
+      const response = await axios.post("/api/users/login", {
         name: name,
         password: password,
       });
