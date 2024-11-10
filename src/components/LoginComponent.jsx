@@ -43,9 +43,9 @@ const LoginComponent = () => {
   useEffect(() => {
     const container = document.querySelector('.falling-circles-container');
     const images = [
-      "/images/circle.png",
-      "/images/triangle.png",
-      "/images/rectangle.png"
+      "/images/circle_white.png",
+      "/images/triangle_white.png",
+      "/images/rectangle_white.png"
     ];
 
     const createFallingImage = () => {
@@ -68,7 +68,7 @@ const LoginComponent = () => {
       });
     };
 
-    const interval = setInterval(createFallingImage, 1500);
+    const interval = setInterval(createFallingImage, 1200);
     return () => clearInterval(interval);
   }, []);
 
