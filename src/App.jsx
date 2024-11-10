@@ -5,7 +5,6 @@ import MMHeader from './layouts/Header';
 import MMFooter from './layouts/Footer';
 import MainRouters from './routers/mainRouter';
 import { UserProvider } from './contexts/userContext';
-import QuestionComponent from './components/QuestionComponent';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           </div>
           <div className="container">
             <MainRouters />
-            <QuestionComponent />
           </div>
           <div className='contentWrapper'>
             <MMFooter />

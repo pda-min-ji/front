@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../styles/LoginStyle.css';
 import { useUser } from "../contexts/userContext";
+import { Typed } from "react-typed";
 
 const LoginComponent = () => {
   const [name, setname] = useState("");
@@ -10,6 +11,7 @@ const LoginComponent = () => {
   const [loginCheck, setLoginCheck] = useState(false);
   const navigate = useNavigate();
   const {Login} =useUser();
+
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -62,8 +64,15 @@ const LoginComponent = () => {
     <div className="form-container">
       <div className="falling-circles-container"></div> {/* Falling circles 컨테이너 추가 */}
       <div className="side-info">
-        <h2>환영합니다!</h2>
-        <p>회원이 되시면 더 많은 서비스를 이용할 수 있습니다.</p>
+        <Typed
+            strings={[
+              "printf('Hello?')",
+              "printf('Welcome Minji's Question')"
+            ]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+          />
       </div>
       <div className="form-box">
         <h1>로그인</h1>

@@ -6,6 +6,16 @@ body {
   overflow: hidden;
 }
 
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: black;
+  }
+}
+
 .falling-circles-container {
   position: absolute;
   top: 0;
