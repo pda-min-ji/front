@@ -14,7 +14,7 @@ export default function UserProfile() {
   useEffect(()=>{
     const fetchProfile = async () =>{
       try {
-        const profileResponse = await axios.get(`http://localhost:8080/users/profile?userId=${userId}`);
+        const profileResponse = await axios.get(`/api/users/profile?userId=${userId}`);
         // console.log('respone:',profileResponse);
         console.log(profileResponse.data.result);
         if (profileResponse.data.isSuccess){
