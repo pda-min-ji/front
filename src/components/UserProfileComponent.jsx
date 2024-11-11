@@ -39,7 +39,7 @@ export default function UserProfile() {
     return <div>Loading...</div>;
 }
   const getRandomImage = () => {
-    const images = ["민지 고양이.png", "민영 고양이.png"];
+    const images = ["민지 고양이.png", "민영 고양이.png","택이얼굴.png"];
     const randomIndex = Math.floor(Math.random() * images.length);
     const encodedImage = encodeURIComponent(images[randomIndex]);
     return `/images/${encodedImage}`;
