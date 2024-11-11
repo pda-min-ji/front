@@ -16,6 +16,7 @@ const LoginComponent = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     
+
     // 빈 값 유효성 검사 추가
     if (!name.trim() || !password.trim()) {
       setLoginCheck(true);
@@ -80,7 +81,7 @@ const LoginComponent = () => {
         <div className="side-info">
         <Typewriter
           words={[
-            "printf('Welcome Minji's Question')"
+            "printf('Welcome Minji's Question!!')"
           ]}
           loop={true}
           cursor
