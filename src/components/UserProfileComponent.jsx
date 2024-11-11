@@ -46,8 +46,8 @@ export default function UserProfile() {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh', paddingTop: '80px' }}>
-    <div style={{ maxWidth: "800px", width: '100%'}}>
+    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh', paddingTop: '60px' }}>
+    <div style={{ maxWidth: "800px", width: '100%' }}>
       <div className="card" style={{maxWidth: "100%"}}>
         <div className="card-body d-flex flex-column align-items-center p-3">
           {/* Profile Image */}
