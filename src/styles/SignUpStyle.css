@@ -1,9 +1,4 @@
-body {
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  justify-content: center;
-}
+
 
 .signup-page {
   display: flex;
@@ -23,7 +18,7 @@ h1{
   margin-bottom: 3rem;
 }
 
-#container{
+.signup-container{
   display: flex;
   justify-content: center; /* 가로 가운데 정렬 */
   align-items: center;

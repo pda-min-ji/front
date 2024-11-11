@@ -48,6 +48,7 @@ const SignUpComponent = () => {
   };
 
   return (
+    <div className="signup-container">
     <div className="signup-page">
       <form className="signup-form" onSubmit={handleSignup}>
         <h1>회원가입</h1>
@@ -86,6 +87,7 @@ const SignUpComponent = () => {
           이미 회원이신가요? <Link to="/users/login">로그인</Link>
         </p>
       </form>
+    </div>
     </div>
   );
 };

@@ -42,13 +42,15 @@ body {
 
 .frame-container{
   display: flex;
-  justify-content: center; /* 가로 가운데 정렬 */
+  justify-content: center; 
   align-items: center;
   height: calc(100vh - 190px);
 }
 
 .page-container{
-  width: 80%;
+  width: 100%;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center;
 }
 
 .form-container {
