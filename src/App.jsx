@@ -7,9 +7,21 @@ import MainRouters from './routers/mainRouter';
 import { UserProvider } from './contexts/userContext';
 
 function App() {
-
   return (
     <>
+      {/* <UserProvider>
+        <div className='wrapper'>
+          <div className='contentWrapper' style={{ marginBottom: "20px" }}>
+            <MMHeader />
+          </div>
+          <div className="container">
+            <MainRouters />
+          </div>
+          <div className='contentWrapper'>
+            <MMFooter />
+          </div>
+        </div>
+      </UserProvider> */}
       <Router>
         <UserProvider>
           <div className="root">
@@ -25,7 +37,7 @@ function App() {
         </UserProvider>
       </Router>
     </>
-  )
+  );
 }
 
 export default App
