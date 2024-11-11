@@ -7,8 +7,11 @@ import { useUser } from '../contexts/userContext';
 export default function MMHeader() {
     const expand = 'lg';
     // const [isLogOn, setIsLogOn] = useState();
-    const {name,onLogin,Logout,first,id,goToProfile} = useUser();
-    console.log(id);
+    const {name,onLogin,Logout,first,id,goToProfile,setId} = useUser();
+    // console.log(id);
+    if (!id){
+        setId(sessionStorage.getItem('id'));
+    }
     // const profileUrl = `/profile/${id}`;
 
     return (
