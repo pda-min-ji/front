@@ -46,7 +46,11 @@ export default function UserProfile() {
   };
 
   return (
+<<<<<<< Updated upstream
     <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh', paddingTop: '30px' }}>
+=======
+    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh', paddingTop: '40px' }}>
+>>>>>>> Stashed changes
     <div style={{ maxWidth: "800px", width: '100%' }}>
       <div className="card" style={{maxWidth: "100%"}}>
         <div className="card-body d-flex flex-column align-items-center p-3">
